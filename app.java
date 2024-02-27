@@ -24,7 +24,7 @@ import java.awt.event.ActionEvent;
 public class test extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textDisplay;
 	private JPanel panel_number;
 
 	String operandl = "";
@@ -52,11 +52,11 @@ public class test extends JFrame {
 	 * Create the frame.
 	 */
 	public test() {
-		setTitle("abcdxyz");
+		setTitle("Calculator");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 499, 399);
+		setBounds(100, 100, 505, 399);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 0, 0));
+		contentPane.setBackground(new Color(233, 233, 233));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -64,7 +64,7 @@ public class test extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("CASIO");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel.setBounds(230, 38, 71, 34);
+		lblNewLabel.setBounds(202, 10, 71, 34);
 		contentPane.add(lblNewLabel);
 
 		JPanel panel = new JPanel();
@@ -73,16 +73,16 @@ public class test extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.BOLD, 18));
-		textField.setBounds(0, 24, 371, 47);
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(textField);
-		textField.setColumns(10);
+		textDisplay = new JTextField();
+		textDisplay.setFont(new Font("Tahoma", Font.BOLD, 18));
+		textDisplay.setBounds(26, 10, 371, 47);
+		textDisplay.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(textDisplay);
+		textDisplay.setColumns(10);
 
 		panel_number = new JPanel();
 		panel_number.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_number.setBounds(70, 137, 442, 225);
+		panel_number.setBounds(15, 127, 460, 225);
 		contentPane.add(panel_number);
 		panel_number.setLayout(new GridLayout(4, 4, 4, 4));
 
@@ -91,11 +91,11 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber1.setBackground(new Color(223, 223, 223));
@@ -107,11 +107,11 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
-				String s = e.getActionCommand();
-				textField.setText(textField.getText() + s);
+				String content = e.getActionCommand();
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber2.setBackground(new Color(223, 223, 223));
@@ -123,42 +123,42 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
-				String s = e.getActionCommand();
-				textField.setText(textField.getText() + s);
+				String content = e.getActionCommand();
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber3.setBackground(new Color(223, 223, 223));
 		btnNumber3.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel_number.add(btnNumber3);
 
-		JButton btnNewButton_4 = new JButton("+");
-		btnNewButton_4.setBackground(new Color(223, 223, 223));
-		btnNewButton_4.addActionListener(new ActionListener() {
+		JButton btnAddition = new JButton("+");
+		btnAddition.setBackground(new Color(223, 223, 223));
+		btnAddition.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String cmd = e.getActionCommand();
+				String information = e.getActionCommand();
 
-				operator = cmd;
-				operandl = textField.getText();
+				operator = information;
+				operandl = textDisplay.getText();
 
-				textField.setText("");
+				textDisplay.setText("");
 			}
 		});
-		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_4);
+		btnAddition.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnAddition);
 
 		JButton btnNumber4 = new JButton("4");
 		btnNumber4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 
 		});
@@ -171,11 +171,11 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber5.setBackground(new Color(223, 223, 223));
@@ -187,42 +187,42 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber6.setBackground(new Color(223, 223, 223));
 		btnNumber6.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel_number.add(btnNumber6);
 
-		JButton btnNewButton_8 = new JButton("-");
-		btnNewButton_8.addActionListener(new ActionListener() {
+		JButton btnSubtraction = new JButton("-");
+		btnSubtraction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String cmd = e.getActionCommand();
+				String information = e.getActionCommand();
 
-				operator = cmd;
-				operandl = textField.getText();
+				operator = information;
+				operandl = textDisplay.getText();
 
-				textField.setText("");
+				textDisplay.setText("");
 			}
 		});
-		btnNewButton_8.setBackground(new Color(223, 223, 223));
-		btnNewButton_8.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_8);
+		btnSubtraction.setBackground(new Color(223, 223, 223));
+		btnSubtraction.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnSubtraction);
 
 		JButton btnNumber7 = new JButton("7");
 		btnNumber7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber7.setBackground(new Color(223, 223, 223));
@@ -234,11 +234,11 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber8.setBackground(new Color(223, 223, 223));
@@ -250,83 +250,83 @@ public class test extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber9.setBackground(new Color(223, 223, 223));
 		btnNumber9.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel_number.add(btnNumber9);
 
-		JButton btnNewButton_12 = new JButton("*");
-		btnNewButton_12.addActionListener(new ActionListener() {
+		JButton btnMultiplication = new JButton("*");
+		btnMultiplication.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String cmd = e.getActionCommand();
+				String information = e.getActionCommand();
 
-				operator = cmd;
-				operandl = textField.getText();
+				operator = information;
+				operandl = textDisplay.getText();
 
-				textField.setText("");
+				textDisplay.setText("");
 			}
 		});
-		btnNewButton_12.setBackground(new Color(223, 223, 223));
-		btnNewButton_12.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_12);
+		btnMultiplication.setBackground(new Color(223, 223, 223));
+		btnMultiplication.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnMultiplication);
 
 		JButton btnNumber0 = new JButton("0");
 		btnNumber0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (isEqualsFress) {
 					isEqualsFress = false;
-					textField.setText("");
+					textDisplay.setText("");
 				}
 
 				String content = e.getActionCommand();
-				textField.setText(textField.getText() + content);
+				textDisplay.setText(textDisplay.getText() + content);
 			}
 		});
 		btnNumber0.setBackground(new Color(223, 223, 223));
 		btnNumber0.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel_number.add(btnNumber0);
 
-		JButton btnNewButton_15 = new JButton("C");
-		btnNewButton_15.addActionListener(new ActionListener() {
+		JButton btnRefreash = new JButton("C");
+		btnRefreash.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("");
+				textDisplay.setText("");
 				operandl = "";
 				operator = "";
 				isEqualsFress = false;
 			}
 		});
-		btnNewButton_15.setBackground(new Color(223, 223, 223));
-		btnNewButton_15.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_15);
+		btnRefreash.setBackground(new Color(223, 223, 223));
+		btnRefreash.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnRefreash);
 
-		JButton btnNewButton_17 = new JButton("=");
-		btnNewButton_17.addActionListener(new ActionListener() {
+		JButton btnResult = new JButton("=");
+		btnResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (textField.getText().equals("") || operandl.equals("")) {
+				if (textDisplay.getText().equals("") || operandl.equals("")) {
 					return;
 				}
 				try {
 					double oprand1 = Double.parseDouble(operandl);
-					double oprand2 = Double.parseDouble(textField.getText());
+					double oprand2 = Double.parseDouble(textDisplay.getText());
 					double result = 0;
 
 					if (operator.equals("+")) {
 						result = oprand1 + oprand2;
 					} else if (operator.equals("-")) {
-						result = oprand1 + oprand2;
+						result = oprand1 - oprand2;
 					} else if (operator.equals("*")) {
 						result = oprand1 * oprand2;
 					} else if (operator.equals("/")) {
 						result = oprand1 / oprand2;
 					}
 
-					textField.setText("" + result);
+					textDisplay.setText("" + result);
 					isEqualsFress = true;
 
 				} catch (Exception e2) {
@@ -334,23 +334,23 @@ public class test extends JFrame {
 				}
 			}
 		});	
-		btnNewButton_17.setBackground(new Color(223, 223, 223));
-		btnNewButton_17.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_17);
+		btnResult.setBackground(new Color(223, 223, 223));
+		btnResult.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnResult);
 
-		JButton btnNewButton_18 = new JButton("/");
-		btnNewButton_18.addActionListener(new ActionListener() {
+		JButton btnDivision = new JButton("/");
+		btnDivision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String cmd = e.getActionCommand();
+				String information = e.getActionCommand();
 
-				operator = cmd;
-				operandl = textField.getText();
+				operator = information;
+				operandl = textDisplay.getText();
 
-				textField.setText("");
+				textDisplay.setText("");
 			}
 		});
-		btnNewButton_18.setBackground(new Color(223, 223, 223));
-		btnNewButton_18.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel_number.add(btnNewButton_18);
+		btnDivision.setBackground(new Color(223, 223, 223));
+		btnDivision.setFont(new Font("Tahoma", Font.BOLD, 15));
+		panel_number.add(btnDivision);
 	}
 }
